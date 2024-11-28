@@ -5,13 +5,13 @@
 /* CodeStitch Root and Helpers */
 @media only screen and (min-width: 0rem) {
   :root {
-    --primary: #CE0909;
-    --primaryLight: #CE0909;
-    --secondary: #CE0909;
-    --secondaryLight: #CE0909;
+    --primary: #0F79E4;
+    --primaryLight: #0F79E4;
+    --secondary: #0F79E4;
+    --secondaryLight: #0F79E4;
     --headerColor: #ffffff;
-    --bodyTextColor: #f7f7f7;
-    --bodyTextColorWhite: #f7f7f7;
+    --bodyTextColor: #ffffff;
+    --bodyTextColorWhite: #ffffff;
     --gap-width: 100px;
     --overlay-bg-color: rgba(0, 0, 0, 0.5);
     --overlay-text-color: #fff;
@@ -27,7 +27,7 @@
   }
   html {
     scroll-behavior: smooth;
-    background-color: #272727;
+    background-color: #dbe3eb;
     scrollbar-width: thin;
     scrollbar-color: #1d1c1c #000000;
   }
@@ -335,7 +335,7 @@ html .cs-social-icon {
     width: 3.5rem;
     height: 3.5rem;
     margin: 0 0 0 auto;
-    background-color: #CE0909;
+    background-color: #0F79E4;
     border: none;
     display: flex;
     justify-content: center;
