@@ -1,6 +1,10 @@
 /*-- -------------------------- -->
 <---           Hero             -->
 <--- -------------------------- -*/
+@font-face {
+  font-family: "Kyoto";
+  src: url("/src/assets/fonts/Kyoto.woff") format("woff");
+}
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #hero-1426 {
@@ -12,11 +16,12 @@
     overflow: hidden;
     position: relative;
     z-index: 1;
+    font-family: "Kyoto", sans-serif;
   }
   #hero-1426 .cs-background {
     width: 100%;
     height: 100%;
-    display: block;
+    display: none;
     position: absolute;
     top: 0;
     left: 0;
@@ -84,13 +89,14 @@
   }
   #hero-1426 .cs-text {
     /* 16px - 20px */
-    font-size: clamp(1rem, 1.95vw, 1.25rem);
-    line-height: 1.5em;
+    font-size: 0.95rem;
+    font-family: "Work", sans;
     text-align: center;
-    width: 100%;
+    width: 60%;
     /* 464px - 622px */
     max-width: clamp(29rem, 60vw, 38.785rem);
     margin: 0 auto 0;
+    margin-top: -1em;
     margin-bottom: 2rem;
     color: #fff;
   }
@@ -108,35 +114,36 @@
     font-weight: 700;
     text-align: center;
     margin: 0;
-    color: #1a1a1a;
+    color: #fff;
     min-width: 12.5rem;
     padding: 0 1.5rem;
     background-color: var(--primary);
-    border-radius: 0.5rem;
     display: inline-block;
     position: relative;
     z-index: 1;
     /* prevents padding from adding to the width */
     box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid white;
   }
   #hero-1426 .cs-button-solid:before {
     content: "";
     position: absolute;
     height: 100%;
     width: 0%;
-    background: #000;
+    background: #2b8def;
     opacity: 1;
     top: 0;
     left: 0;
     z-index: -1;
-    border-radius: 0.25rem;
     transition: width 0.3s;
   }
   #hero-1426 .cs-button-solid:hover:before {
     width: 100%;
   }
   #hero-1426 .cs-button1 {
-    background-color: var(--secondary);
+    background-color: #2b8def;
+    border: none;
   }
 }
 :root {
@@ -145,22 +152,28 @@
   --visible-slides: 3; /* Three slides should be visible at once */
   --total-slides: 20; /* Total number of slides, including duplicates */
   --total-width: calc((var(--slide-width) + var(--gap-width)) * var(--total-slides));
-  --scroll-duration: 60s; /* Adjust the scrolling speed */
+  --scroll-duration: 260s; /* Adjust the scrolling speed */
 }
 
 .carousel {
-  width: 100vw; /* Make the carousel span the full width of the viewport */
-  height: 100vh; /* Make the carousel span the full height of the viewport */
+  width: 100vw; /* Ensure it spans the full width of the viewport */
+  height: 100%; /* Ensures full height of the viewport */
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 4;
-  overflow: hidden;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+  gap: 0;
 }
 
 .carousel-track {
   display: flex;
   width: var(--total-width);
+  margin: 0;
+  padding: 0;
+  height: 100vh; /* Each row takes 1/3 of the height */
   animation: scroll var(--scroll-duration) linear infinite;
 }
 
@@ -177,20 +190,28 @@
 }
 
 .slide {
-  flex: 0 0 var(--slide-width); /* Adjust to display three slides */
+  flex: 0 0 var(--slide-width); /* Keeps the width responsive */
   position: relative;
-  height: 100%; /* Ensure slide fills the full height of the viewport */
+  height: auto; /* Allows the aspect ratio to control height */
+  aspect-ratio: 1; /* Ensures the slide is always square */
 }
 
 .slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the image covers the whole slide area */
+  object-fit: cover; /* Ensures the image covers the slide without distortion */
 }
 
 /* Hide the overlay completely */
 .overlay {
-  display: none; /* Hide the overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+  z-index: 0; /* Ensure it's above the background, but below carousel content */
+  pointer-events: none; /* Allow interaction with carousel elements */
 }
 
 @keyframes scroll {
@@ -215,6 +236,72 @@
   }
   100% {
     transform: translateX(0);
+  }
+}
+.countdown-container {
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 400px;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.countdown {
+  display: flex;
+  justify-content: space-around;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e0f7fa;
+  width: 5em;
+  box-shadow: 0 0 5px gray;
+}
+
+.countdown-item span {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.countdown-item p {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #555;
+  margin-top: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    --slide-width: 80vw; /* Adjust slide width for mobile */
+  }
+}
+@media only screen and (min-width: 1400px) {
+  :root {
+    --slide-width: 25vw; /* Each slide takes up 1/4 of the viewport width */
+    --visible-slides: 4; /* Show four slides */
+  }
+}
+@media only screen and (max-width: 768px) {
+  :root {
+    --slide-width: 50vw; /* Each slide takes up half the viewport width */
+    --visible-slides: 2; /* Show two slides */
+  }
+}
+/* Adjust for screens 480px and smaller */
+@media only screen and (max-width: 480px) {
+  :root {
+    --slide-width: 80vw; /* Each slide takes up 80% of the viewport width */
+    --visible-slides: 1.25; /* Show a part of the next slide for context */
   }
 }
 
