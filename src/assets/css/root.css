@@ -204,6 +204,7 @@ html {
   /* reset margin and padding so there's no gap between the nav and the screen edges */
   margin: 0;
   padding: 0;
+  font-family: "Kyoto", sans-serif;
 }
 body .cs-social,
 html .cs-social {

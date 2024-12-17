@@ -79,7 +79,7 @@
             /* 13px - 16px */
             font-size: clamp(.8125rem, 1.5vw, 1rem);
             line-height: 1.2em;
-            font-weight: 700;
+            font-weight: 100;
             letter-spacing: 0.1em;
             text-align: center;
             text-transform: uppercase;
@@ -92,7 +92,7 @@
         .cs-title {
             /* 39px - 61px */
             font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
-            font-weight: 700;
+            font-weight: 100;
             line-height: 1.2em;
             text-align: center;
             max-width: calc(829 / 16 * 1rem);
@@ -103,7 +103,7 @@
         .cs-text {
             /* 16px - 20px */
             font-size: .95rem;
-            font-family: "Work", sans;
+            font-family: "Work Sans", sans;
             text-align: center;
             width: 60%;
             /* 464px - 622px */
@@ -126,7 +126,7 @@
             /* 46px - 56px */
             line-height: clamp(2.875rem, 5.5vw, 3.5rem);
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 100;
             text-align: center;
             margin: 0;
             color: #fff;
@@ -164,6 +164,22 @@
         .cs-button1 {
             background-color: #2b8def;
             border: none;
+        }
+
+        .cs-graphic {
+            width: 100%;
+            min-width: calc(1920/16 * 1rem);
+            height: auto;
+            object-fit: cover;
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            z-index: 1;
+            transform: translateX(-50%);
+        }
+
+        .cs-graphic-dark {
+            display: none;
         }
     }
 }
