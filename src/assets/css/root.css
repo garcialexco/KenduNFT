@@ -61,7 +61,7 @@
     font-size: var(--headerFontSize);
     line-height: 1.2em;
     font-weight: 900;
-    color: var(--headerColor);
+    color: #1a1a1a;
     text-align: inherit;
   }
   .cs-text {
@@ -70,8 +70,9 @@
     width: 100%;
     font-size: var(--bodyFontSize);
     line-height: 1.5em;
-    color: var(--bodyTextColor);
+    color: #1a1a1a;
     text-align: inherit;
+    font-family: "Work Sans", sans;
   }
   .cs-button-solid {
     z-index: 1;
