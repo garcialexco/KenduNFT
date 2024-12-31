@@ -3,9 +3,7 @@
 <--- -------------------------- -*/
 @font-face {
   font-family: "Kyoto";
-  src: url("./assets/fonts/Kyoto.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
+  src: url("/src/assets/fonts/Kyoto.woff") format("woff");
 }
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
