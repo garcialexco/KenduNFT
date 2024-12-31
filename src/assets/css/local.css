@@ -204,6 +204,22 @@
 /*-- -------------------------- -->
 <---          Gallery           -->
 <--- -------------------------- -*/
+.cs-graphic {
+  bottom: -5vw; /* Default behavior */
+  /* Fine-tune for smaller screens */
+  /* Fine-tune for larger screens */
+}
+@media only screen and (max-width: 650px) {
+  .cs-graphic {
+    bottom: -20vw; /* Adjust to remove space */
+  }
+}
+@media only screen and (min-width: 1420px) {
+  .cs-graphic {
+    bottom: -6vw; /* Adjust to remove space */
+  }
+}
+
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #gallery-1182 {
@@ -212,6 +228,7 @@
     padding-right: 0;
     background-color: #A6D0FA;
     overflow: visible;
+    position: relative;
   }
   #gallery-1182 .cs-graphic {
     width: 130%;
@@ -219,10 +236,9 @@
     height: 7%;
     object-fit: cover;
     position: absolute;
-    bottom: -7%;
-    left: 65%;
-    z-index: -1;
+    left: 50%;
     transform: translateX(-50%);
+    z-index: 2;
     overflow-x: hidden;
   }
   #gallery-1182 .cs-container {
@@ -231,19 +247,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* 48px - 64px */
     gap: clamp(3rem, 6vw, 4rem);
   }
   #gallery-1182 .cs-content {
-    /* set text align to left if content needs to be left aligned */
     text-align: center;
     width: 100%;
     padding: 0 1rem;
-    /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
     align-items: center;
   }
   #gallery-1182 .cs-title {
@@ -253,17 +265,13 @@
     width: 100%;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
-    /* 16px - 20px */
     gap: clamp(1rem, 2vw, 1.25rem);
   }
   #gallery-1182 .cs-picture {
     width: 100%;
-    height: 67vw;
-    /* makes it square */
     aspect-ratio: 1;
     display: block;
     grid-column: span 5;
-    grid-row: span 1;
     position: relative;
   }
   #gallery-1182 .cs-picture img {
