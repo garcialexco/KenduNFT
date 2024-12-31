@@ -4,11 +4,10 @@
 
 
 @font-face {
-
     font-family: 'Kyoto';
-  
-    src: url('/src/assets/fonts/Kyoto.woff') format('woff');
-  
+    src: url('./assets/fonts/Kyoto.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
   }
 
 /* Mobile - 360px */
