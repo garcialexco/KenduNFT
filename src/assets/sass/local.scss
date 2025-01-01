@@ -18,9 +18,10 @@
         padding: var(--sectionPadding);
         overflow: visible;
         position: relative;
-        z-index: 2;
+        z-index: 4;
         margin-top: -0.1em;
         background-color:#dbe3eb;
+        padding-bottom: 4em;
 
         &:before {
             content: '';
@@ -113,7 +114,7 @@
                 content: "";
                 width: 0%;
                 height: 100%;
-                background: #1a1a1a;
+                background-color: #083766;
                 opacity: 1;
                 display: block;
                 position: absolute;
@@ -154,6 +155,8 @@
             grid-column: span 12;
             display: block;
             z-index: 2;
+            box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.25);
+
 
             &:nth-of-type(even) {
                 margin-left: auto;
@@ -184,7 +187,6 @@
             position: absolute;
             bottom: -7%;
             left: 65%;
-            z-index: -1;
             transform: translateX(-50%);
             overflow: visible;
         }
@@ -194,6 +196,8 @@
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
     #sbs-1984 {
+        padding-bottom: 5em;
+
         .cs-container {
             max-width: calc(1280/16 * 1rem);
             flex-direction: row;
@@ -241,21 +245,6 @@
 <---          Gallery           -->
 <--- -------------------------- -*/
 
-.cs-graphic {
-    bottom: clamp(-5vw, -7vw, -8vw); /* Default behavior */
-
-    /* Fine-tune for smaller screens */
-    @media only screen and (max-width: 650px) {
-        bottom: -20vw; /* Adjust to remove space */
-    }
-
-    /* Fine-tune for larger screens */
-    @media only screen and (min-width: 1420px) {
-        bottom: -6vw; /* Adjust to remove space */
-    }
-}
-
-
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
     #gallery-1182 {
@@ -265,6 +254,8 @@
         background-color: #A6D0FA;
         overflow: visible;
         position: relative;
+        z-index: 3;
+        padding-top: 7em;
 
         .cs-graphic {
             width: 130%;
@@ -274,8 +265,20 @@
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 2;
+            z-index: 4;
             overflow-x: hidden;
+
+            bottom: clamp(-5vw, -7vw, -8vw); /* Default behavior */
+        
+            /* Fine-tune for smaller screens */
+            @media only screen and (max-width: 650px) {
+                bottom: -21vw; /* Adjust to remove space */
+            }
+        
+            /* Fine-tune for larger screens */
+            @media only screen and (min-width: 1420px) {
+                bottom: -4.5vw; /* Adjust to remove space */
+            }
         }
 
         .cs-container {
@@ -322,6 +325,48 @@
                 height: 100%;
                 width: 100%;
                 object-fit: cover;
+                box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.25);
+
+            }
+        }
+
+        .cs-button-solid {
+            font-size: calc(16/16 * 1rem);
+            font-weight: 700;
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            margin: 0;
+            /* 32px - 48px */
+            padding: 0 clamp(2rem, 4vw, 3rem);
+            background-color: var(--primary);
+            overflow: hidden;
+            color: #fff;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            transition: color 0.3s;
+
+            &:before {
+                content: "";
+                width: 0%;
+                height: 100%;
+                background-color: #083766;
+                opacity: 1;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                color: #fff;
+
+                &:before {
+                    width: 100%;
+                }
             }
         }
     }
@@ -351,7 +396,9 @@
         padding: var(--sectionPadding);
         overflow: visible;
         position: relative;
-        z-index: 1;
+        z-index: 2;
+        background-color: #dbe3eb;
+        padding-top: 10em;
 
         &:before {
             content: '';
@@ -392,6 +439,13 @@
 
         .cs-text {
             margin-bottom: calc(24/16 * 1rem);
+        }
+
+        .cs-subTitle {
+            color: #000;
+            font-size: 1rem;
+            margin-top: 1em;
+            margin-bottom: 0.5em;
         }
 
         .cs-ul {
@@ -442,7 +496,7 @@
                 content: "";
                 width: 0%;
                 height: 100%;
-                background: #1a1a1a;
+                background-color: #083766;
                 opacity: 1;
                 display: block;
                 position: absolute;
@@ -483,6 +537,8 @@
             grid-column: span 12;
             display: block;
             z-index: 2;
+            box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.25);
+
 
             &:nth-of-type(even) {
                 margin-left: auto;
@@ -497,11 +553,40 @@
             img {
                 width: 100%;
                 height: 100%;
+                object-position: 50% 35%;
                 object-fit: cover;
                 top: 0;
                 left: 0;
                 transition: transform 0.7s;
+                
             }
+        }
+
+        .cs-graphic-3 {
+            bottom: clamp(-5vw, -7vw, -8vw); /* Default behavior */
+        
+            /* Fine-tune for smaller screens */
+            @media only screen and (max-width: 650px) {
+                bottom: -20vw; /* Adjust to remove space */
+            }
+        
+            /* Fine-tune for larger screens */
+            @media only screen and (min-width: 1420px) {
+                bottom: -4vw; /* Adjust to remove space */
+            }
+        }
+
+        .cs-graphic-3 {
+            width: 130%;
+            min-width: calc(1200/16 * 1rem);
+            height: 7%;
+            object-fit: cover;
+            position: absolute;
+            bottom: -6.9%;
+            left: 65%;
+            z-index: 3;
+            transform: translateX(-50%);
+            overflow: visible;
         }
     }
 }
@@ -563,6 +648,7 @@
         background-color: var(--primary);
         position: relative;
         z-index: 1;
+        padding: 7em 0 7em 0;
 
         .cs-container {
             width: 100%;
@@ -597,6 +683,11 @@
             color: var(--bodyTextColorWhite);
         }
 
+        .cs-text {
+            color: #FAFBFC;
+            margin-top: 2em;
+        }
+
         .cs-button-box {
             display: flex;
             flex-wrap: wrap;
@@ -627,7 +718,7 @@
                 position: absolute;
                 height: 100%;
                 width: 0%;
-                background: #000;
+                background-color: #083766;
                 opacity: 1;
                 top: 0;
                 left: 0;
@@ -715,8 +806,8 @@
                 display: block;
                 height: 100%;
                 width: 100%;
-                background: #1a1a1a;
-                opacity: 0.88;
+                background: #000000;
+                opacity: 0.75;
                 top: 0;
                 left: 0;
                 z-index: 1;
@@ -732,6 +823,18 @@
                 object-fit: cover;
             }
         }
+
+        .cs-graphic {
+            width: 100%;
+            min-width: calc(1920/16 * 1rem);
+            height: auto;
+            object-fit: cover;
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            z-index: 1;
+            transform: translateX(-50%);
+        }
     }
 }
 
@@ -746,6 +849,7 @@
         padding: var(--sectionPadding);
         position: relative;
         z-index: 1;
+        background-color: #001122;
 
         .cs-container {
             width: 100%;
@@ -860,7 +964,7 @@
         }
 
         .cs-copyright {
-            font-size: calc(16 / 16 * 1rem);
+            font-size: 0.8rem;
             line-height: 1.5em;
             margin: 0;
             color: #bababa;
